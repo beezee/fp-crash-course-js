@@ -17,10 +17,10 @@ const monad = (
 
 let ID = monad(
  (ma) => (amb) => amb(ma.value),
- (fa) => (fab) => fab(fa));
+ (fa) => (fab) => fab.value(fa.value));
 
-// ID.ap("hello")(ID.of(console.log));
-// ID.map("hello")(console.log);
+ID.of("hello").ap(ID.of(console.log));
+ID.of("hello").map(console.log);
 
 Do(function*() {
   let greet = yield ID.of("hello");
