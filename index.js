@@ -2,7 +2,7 @@ const Do = require('do-notation');
 
 const monad = (
   chain, // Chain m => m a -> (a -> m b) -> m b
-  ap, // ap :: Apply f => f a -> f (a -> b) -> f b
+  ap, // Apply f => f a -> f (a -> b) -> f b
   value
 ) => {
   const res = {
